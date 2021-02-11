@@ -2,7 +2,7 @@
 const grid = document.querySelector('.container');
 const scoreDisplay = document.querySelector('#score');
 
-let blockwidth = 100;
+let blockwidth = 120;
 let blockheight = 20;
 let score = 0;
 let userStart = [270, 10];
@@ -89,7 +89,7 @@ function moveUser(e) {
             }
             break;
         case "ArrowRight":
-            if (currentPos[0] < 545 - blockwidth) {
+            if (currentPos[0] < 540 - blockwidth) {
                 currentPos[0] += 10;
                 user.style.left = currentPos[0] + 'px';
 
@@ -165,9 +165,10 @@ function changeDirection() {
 }
 // collisions checking
 function checkCollisions() {
-
+    
     //collisions with the blocks
     for (let i = 0; i < blocks.length; i++) {
+        
         if ((ballCurrentPos[0] > blocks[i].bottomLeft[0] && ballCurrentPos[0] < blocks[i].bottomRight[0]) &&
             ((ballCurrentPos[1] + ballDiameter) > blocks[i].bottomLeft[1] && ballCurrentPos[1] < blocks[i].topLeft[1])) {
 
@@ -195,7 +196,7 @@ function checkCollisions() {
         
     }
 
-
+    console.log(currentPos[0])
     // collisions with user paddle
     if ((ballCurrentPos[0] > currentPos[0] && ballCurrentPos[0] < currentPos[0] + blockwidth)
         && (ballCurrentPos[1] > currentPos[1] && ballCurrentPos[1] < currentPos[1] + 24)) {
