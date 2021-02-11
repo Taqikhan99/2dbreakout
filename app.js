@@ -129,7 +129,7 @@ function moveBall() {
         youwin();
     }
 }
-timerId = setInterval(moveBall, 15);
+timerId = setInterval(moveBall, 12);
 
 checkCollisions();
 
@@ -192,7 +192,7 @@ function checkCollisions() {
         document.removeEventListener('keydown', moveUser);
         clearInterval(timerId);
         scoreDisplay.innerHTML = "You Lose";
-        youwin();
+        
     }
 
 
